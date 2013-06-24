@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), "..", "lib"))
+require 'puppet-parser'
+require 'yaml'
+require 'optparse'
+
+options = {
+  :nodes   => true,
+  :classes => true,
+}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: puppet-parser <PATH> [PATH]..."
+
+  opts.on_tail("-h", "--help", "Show this message.") do
+    puts opts
+    exit
+  end
+
+  begin
+    opts.parse!(ARGV)
+  rescue => e
+    puts e.message
+    puts opts.help
+    exit
+  end
+
+  if ARGV.length == 0
+    puts opts.help
+    exit
+  end
+end
+
+parser = PuppetParser.new(options)
+parser.run(ARGV)
+

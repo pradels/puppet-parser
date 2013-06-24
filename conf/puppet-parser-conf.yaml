@@ -1,0 +1,12 @@
+# Section ignore_paths lists all path names that should be ignored and should
+# not be parsed.
+ignore_paths:
+
+  # List of paths that match if they begin with specified path.
+  begin_with:
+    #- /path/to/ignore1
+    #- /path/to/ignore2
+    - /data/puppet/test/config
+    - /data/puppet/preprod/config
+    - /data/puppet/prod/config
+
