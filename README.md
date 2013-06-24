@@ -27,6 +27,15 @@ completely rewritten code around existing puppet parser.
 
 ## Usage
 
+Clone github repository:
+
+```
+$ git clone https://github.com/pradels/puppet-parser.git
+```
+
+Run `puppet-parser` command with the path where *.pp files are located. Parser walks
+recursively through all subdirectories if specified path is a directory.
+
 ```
 $ puppet-parser/bin/puppet-parser <PATH> [PATH]...
 ```
