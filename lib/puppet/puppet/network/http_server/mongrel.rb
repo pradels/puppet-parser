@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # File:       06-11-14-mongrel_xmlrpc.rb
 # Author:     Manuel Holtgrewe <purestorm at ggnore.net>
 #

@@ -1,0 +1,51 @@
+
+#
+# = Synopsis
+#
+# Check and report the license status of Puppet Enterprise install
+#
+# = Usage
+#
+#   puppet license
+#
+# = Description
+#
+# Puppet Enterprise requires a license and support agreement for operation,
+# and the +puppet license+ application checks and reports the status of that
+# license for the operator.
+#
+# It reports your current node count compliance status, as well as checking
+# the expiration status of your support agreement with Puppet Labs - or, for
+# the complimentary ten node free license, confirms that you have no support
+# agreement.
+#
+# = Usage Notes
+#
+# This must be run locally on the machine that is the Puppet Certificate
+# Authority, in order to provide access to the certificate pool used to
+# validate the installation and license count.
+#
+# The output of this command is not an API, and may change in future
+# versions.  While we intend to provide a machine-focused API at some point,
+# and do not expect gratuitous changes, please don't rely too heavily on
+# parsing the output of this command.
+#
+# = Options
+#
+# None; puppet license runs without configuration.
+#
+# = Example
+#
+#    ] puppet license
+#    You have 12 active and 3 inactive nodes in your CA
+#
+# = Author
+#
+# Daniel Pittman
+#
+# = Copyright
+#
+# Copyright (c) 2011 Puppet Labs, LLC
+# Licensed under the GNU Public License
+
+#Puppet::Application[:license].run
