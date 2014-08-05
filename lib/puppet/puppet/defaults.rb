@@ -30,7 +30,7 @@ module Puppet
     },
     :rundir => {
       :default => Puppet.run_mode.run_dir,
-      :mode => 01777,
+      :mode => 0755,
       :desc => "Where Puppet PID files are kept."
     },
     :genconfig => [false,

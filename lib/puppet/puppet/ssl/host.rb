@@ -307,7 +307,7 @@ ERROR_STRING
   # configurable
   # --jeffweiss 29 aug 2012
   def suitable_message_digest_algorithms
-    [:SHA1, :SHA256, :SHA512]
+    [:MD5, :SHA1, :SHA256, :SHA512]
   end
 
   # Attempt to retrieve a cert, if we don't already have one.
