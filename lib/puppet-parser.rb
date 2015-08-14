@@ -7,14 +7,13 @@ require 'puppet-parser/version'
 
 class PuppetParser
   def initialize(options)
+    @options = options
     @config = PuppetParser::Config.new
     @parser = PuppetParser::Parser.new
 
-    @options = options
-
     @output = {}
-    @output["nodes"] = {} if @options[:nodes]
-    @output["classes"] = {} if @options[:classes]
+    @output["nodes"] = [] if @options[:nodes]
+    @output["classes"] = [] if @options[:classes]
   end
 
   def parse(files)
@@ -22,8 +21,8 @@ class PuppetParser
       @parser.parse_file(file)
     end
 
-    @output["nodes"].merge!(@parser.nodes) if @options[:nodes]
-    @output["classes"].merge!(@parser.classes) if @options[:classes]
+    @output["nodes"].push(*@parser.nodes) if @options[:nodes]
+    @output["classes"].push(*@parser.classes) if @options[:classes]
 
     @output
   end
